@@ -1,0 +1,7 @@
+rm *.o
+all: magazin.o main2.o
+	gcc magazin.o main2.o
+magazin.o: magazin.c
+	gcc -c magazin.c
+main2.o: main2.c
+	gcc -c main2.c
