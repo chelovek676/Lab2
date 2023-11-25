@@ -1,4 +1,3 @@
-rm *.o
 all: magazin.o main2.o
 	gcc magazin.o main2.o
 magazin.o: magazin.c
