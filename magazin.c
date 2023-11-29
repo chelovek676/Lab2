@@ -20,8 +20,10 @@ FILE *f = fopen("stroika.txt", "r");
 if(!f)
 return;
 if(fscanf(f, "%d", n) != 1)
+fclose(f);
 return;
 if(*n<=0)
+fclose(f);
 return;
 *arr = (struct stroika*)calloc(*n, sizeof(struct stroika));
 for (int i = 0; i<*n; i++)
@@ -56,7 +58,7 @@ while(getchar() != '\n');
 }
 
 void find(struct stroika *arr, int n){
-FILE *f = fopen("j.txt", "r");
+FILE *f = fopen("stroika.txt", "r");
 if(!f)
 return;
 char search[40];
