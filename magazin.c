@@ -19,12 +19,14 @@ void read(struct stroika **arr, int *n){
 FILE *f = fopen("stroika.txt", "r");
 if(!f)
 return;
-if(fscanf(f, "%d", n) != 1)
+if(fscanf(f, "%d", n) != 1){
 fclose(f);
 return;
-if(*n<=0)
+}  
+if(*n<=0){
 fclose(f);
 return;
+}
 *arr = (struct stroika*)calloc(*n, sizeof(struct stroika));
 for (int i = 0; i<*n; i++)
 fscanf(f, "%s %s %s %d", (*arr)[i].name, (*arr)[i].color, (*arr)[i].whomade, &(*arr)[i].price);
